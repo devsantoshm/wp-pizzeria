@@ -35,6 +35,7 @@ html{
 /* ENCABEZADO */
 header.encabezado-sitio{
 	border-bottom: 1px solid #c1c1c1;
+	padding-bottom: 30px;
 }
 
 div.logo{
@@ -71,4 +72,77 @@ img.logotipo{
 	div.direccion p{
 		text-align: right;
 	}
+}
+
+div.direccion{
+	display: block;
+	clear: both;
+	padding-top: 10px;
+}
+
+div.direccion p{
+	margin: 0;
+	font-size: 14px;
+	text-align: center; /* se vera en los dispositivos moviles centrado */
+}
+
+/* POR QUE TOMA EN CASCADA LA ULTIMA INSTRUCCION */
+@media only screen and (min-width: 768px) {
+
+	div.direccion p{
+		text-align: right;
+	}
+} 
+
+/* MENU REDES SOCIALES */
+nav.sociales ul{
+	text-align: center;
+	list-style: none;
+	padding: 0;
+}
+
+@media only screen and (min-width: 768px) {
+	nav.sociales ul{
+		float: right;
+	}
+}
+
+.sr-text{
+	display: none;
+}
+
+nav.sociales ul li{
+	position: relative;
+	display: inline-block;
+}
+
+nav.sociales ul li a:before{
+	font-family: 'FontAwesome';
+	display: inline-block;
+	vertical-align: top;
+	padding: 0 5px;
+	content: '\f08e';
+	font-size: 25px;
+	color: #000000;
+	-webkit-font-smoothing:antialiased;
+}
+
+nav.sociales li a[href*="facebook.com"]::before{
+	content: '\f09a';
+}
+
+nav.sociales li a[href*="twitter.com"]::before{
+	content: '\f099';
+}
+
+nav.sociales li a[href*="pinterest.com"]::before{
+	content: '\f231';
+}
+
+nav.sociales li a[href*="youtube.com"]::before{
+	content: '\f16a';
+}
+
+nav.sociales li a[href*="instagram.com"]::before{
+	content: '\f16d';
 }

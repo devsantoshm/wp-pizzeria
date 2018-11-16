@@ -20,8 +20,8 @@
 						$args = array(
 							'theme_location' => 'social-menu',
 							'container' => 'nav',
-							'container_class' => 'menu-social',
-							'container_id' => 'menu-social',
+							'container_class' => 'sociales',
+							'container_id' => 'sociales',
 							'link_before' => '<span class="sr-text">',
 							'link_after' => '</span>'
 						); 
