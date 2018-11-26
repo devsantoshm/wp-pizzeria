@@ -4,7 +4,7 @@ function lapizzeria_setup()
 {
 	//habilitar imagen destacada en wp backend 
 	add_theme_support( 'post-thumbnails' );
-	add_image_size( 'nosotros', 437, 291, true );
+	add_image_size( 'nosotros', 367, 251, true );
 }
 
 add_action( 'after_setup_theme', 'lapizzeria_setup' );
