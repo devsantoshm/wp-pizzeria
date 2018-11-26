@@ -2,8 +2,9 @@
 
 function lapizzeria_setup()
 {
-	//habilitar imagen destacada en wp backend
+	//habilitar imagen destacada en wp backend 
 	add_theme_support( 'post-thumbnails' );
+	add_image_size( 'nosotros', 437, 291, true );
 }
 
 add_action( 'after_setup_theme', 'lapizzeria_setup' );
@@ -12,7 +13,7 @@ function lapizzeria_styles()
 {
 	// REGISTRAR LOS ESTILOS
 	wp_register_style('normalize', get_template_directory_uri() . '/css/normalize.css', array(), '8.0.1');
-
+	wp_register_style( 'google_fonts', 'https://fonts.googleapis.com/css?family=Open+Sans|Raleway:400,700,900', array(), '1.0.0' );
 	//que cargue primero normalize
 	wp_register_style('fontawesome', get_template_directory_uri() . '/css/font-awesome.min.css', array('normalize'), '5.5.0');
 
