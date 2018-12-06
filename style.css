@@ -51,6 +51,37 @@ h4{
 	font-size: 24px;
 }
 
+.button{
+	font-family: 'Open Sans', sans-serif;
+	font-size: 16px;
+	width: auto;
+	border-radius: 8px;
+	color: #ffffff;
+	padding: 15px 80px;
+	margin-top: 20px;
+	display: inline-block;
+	text-decoration: none;
+	transition: background-color .5s ease;
+}
+
+.button.rojo{
+	background-color: #a61206;
+}
+
+.button:hover{
+	background-color: #f19f30;
+}
+
+.clear, .clear::after{
+	content: '';
+	clear: both;
+	display: block;
+}
+
+.texto-rojo{
+	color: #a61206;
+}
+
 .texto-centrado{
 	text-align: center;
 }
@@ -59,6 +90,11 @@ h4{
 	max-width: 1100px;
 	width: 100%; /* el ancho se siempre 100% */
 	margin: 0 auto;
+}
+
+img{
+	max-width: 100%; /* para que la imagen sea responsiva */
+	height: auto;
 }
 
 /* ENCABEZADO */
@@ -422,4 +458,135 @@ footer p.copyright{
 
 .contenido-caja p{
 	grid-area: texto;
+}
+
+
+/* ESPECIALIDADES */
+.nuestras-especialidades{
+	padding: 0 60px;
+}
+
+div.texto-especialidad{
+	padding: 20px;
+}
+
+div.texto-especialidad h4{
+	border-bottom: 1px solid #dfdfdd;
+	padding-bottom: 15px;
+	font-weight: 700;
+	text-transform: uppercase;
+	margin: 0;
+}
+
+div.texto-especialidad h4 span{
+	float: right;
+	font-size: 30px;
+	color: #f19f30;
+	font-family: 'Open Sans', sans-serif;
+}
+
+div.texto-especialidad p{
+	color: #3d3d3d;
+	line-height: 30px;
+}
+
+/* GRID */
+@media only screen and (min-width: 768px) {
+	.contenedor-grid{
+		margin-left: -10px;
+		margin-right: -10px;
+	}
+
+	.contenedor-grid::after{
+		content: '';
+		display: block;
+		clear: both;
+	}
+
+	[class*="columnas"]{
+		padding: 0 10px;
+		float: left;
+	}
+
+	.columnas1-4{
+		width: 25%;
+	}
+
+	.columnas2-4{
+		width: 50%;
+	}
+
+	.columnas3-4{
+		width: 75%;
+	}
+
+	.columnas1-3{
+		width: 33.3%;
+	}
+
+	.columnas2-3{
+		width: 66.6%;
+	}
+}
+
+/* BLOG */
+article.entrada-blog img{
+	margin-top: 30px;
+}
+
+header.informacion-entrada{
+	margin-top: 20px;
+}
+
+header.informacion-entrada div.fecha{
+	background-color: #f19f30;
+	float: left;
+	width: 70px;
+	height: 70px;
+	text-align: center;
+	padding-top: 5px;
+	margin-right: 20px;
+}
+
+header.informacion-entrada div.fecha time{
+	font-size: 30px;
+	font-family: 'Raleway', sans-serif;
+	font-weight: 700;
+}
+
+header.informacion-entrada div.fecha time span{
+	font-size: 15px;
+	display: block;
+	clear: both;
+	text-transform: uppercase;
+}
+
+header.informacion-entrada .titulo-entrada{
+	float: right;
+	width: calc(100% - 90px);
+}
+
+header.informacion-entrada h2{
+	margin: 0;
+	font-size: 24px;
+	text-transform: uppercase;
+	font-weight: 700;
+}
+
+header.informacion-entrada p.autor{
+	text-transform: uppercase;
+	color: #505050;
+	margin-top: 14px;
+	font-family: 'Raleway', sans-serif;
+}
+
+p.autor i{
+	font-size: 30px;
+	color: #f19f30;
+}
+
+div.contenido-entrada p{
+	margin-bottom: 0;
+	margin-top: 0;
+	line-height: 24px;
 }
