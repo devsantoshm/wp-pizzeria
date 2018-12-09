@@ -51,7 +51,9 @@ h4{
 	font-size: 24px;
 }
 
-.button{
+.button,
+div.comentarios form input[type='submit']{
+	background-color: #a61206;
 	font-family: 'Open Sans', sans-serif;
 	font-size: 16px;
 	width: auto;
@@ -62,6 +64,7 @@ h4{
 	display: inline-block;
 	text-decoration: none;
 	transition: background-color .5s ease;
+	cursor: pointer;
 }
 
 .button.rojo{
@@ -242,7 +245,8 @@ nav.menu-sitio ul li a{
 	color: #000000;
 }
 
-nav.menu-sitio ul li.current_page_item a{
+nav.menu-sitio ul li.current_page_item a,
+nav.menu-sitio ul li.current_page_parent a{ /* poner activo el menu */
 	border-bottom: 8px solid #a61206; 
 }
 
@@ -641,4 +645,41 @@ aside .widget ul li a{
 
 aside .widget ul li a:hover{
 	color: #f19f30;
+}
+
+/* COMENTARIOS */
+div.comentarios h3{
+	font-weight: 700;
+	text-align: center;
+}
+
+@media only screen and (min-width: 992px) {
+	div.comentarios{
+		width: 60%;
+	}
+}
+
+div.comentarios form label{
+	width: 200px;
+	display: inline-block;
+	text-align: right;
+	padding-right: 20px;
+	font-weight: bold;
+}
+
+div.comentarios form input,
+div.comentarios form textarea{
+	padding: 10px;
+	width: 69%;
+}
+
+div.comentarios form input[type='submit']{
+	margin: 0 auto;
+	display: block;
+	border: none;
+}
+
+p.logged-in-as a{
+	color: #a61206;
+	text-decoration: none;
 }
