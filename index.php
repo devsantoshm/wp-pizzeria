@@ -43,7 +43,10 @@
 							<a href="<?php the_permalink(  ) ?>" class="button rojo">Leer Mas</a>
 						</div>
 					</article>
-				<?php endwhile; ?>	
+				<?php endwhile; ?>
+				<div class="paginacion">
+					<?php echo paginate_links() ?>
+				</div>	
 			</main>
 			<?php get_sidebar(); ?>
 		</div>

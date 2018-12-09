@@ -683,3 +683,59 @@ p.logged-in-as a{
 	color: #a61206;
 	text-decoration: none;
 }
+
+/* COMENTARIOS */
+ul.lista-comentarios,
+ul.lista-comentarios ul{
+	list-style: none;
+}
+
+ul.lista-comentarios li.comment{
+	background-color: #e1e1e1;
+	padding: 20px;
+	margin-bottom: 20px;
+	border-radius: 20px;
+}
+
+ul.lista-comentarios li.comment cite{
+	color: #a61206;
+	font-size: 20px;
+	font-weight: bold;
+}
+
+ul.lista-comentarios li.comment .comment-author{
+	margin-bottom: 20px;
+}
+
+ul.lista-comentarios li.comment a{
+	color: #a61206;
+	text-decoration: none;
+}
+
+ul.lista-comentarios li.comment ul.children li{
+	background-color: white;
+	margin-top: 20px;
+}
+
+/* PAGINACION */
+.paginacion{
+	margin-top: 20px;
+	background-color: #e1e1e1;
+	padding: 20px;
+	display: inline-block;
+	border-radius: 20px;
+}
+
+.paginacion a{
+	color: #a61206;
+	text-decoration: none;
+}
+
+.paginacion a:hover{
+	text-decoration: underline;
+}
+
+.paginacion .current{
+	font-weight: bold;
+	color: #555;
+}
