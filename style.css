@@ -172,7 +172,8 @@ nav.sociales ul{
 	}
 }
 
-.sr-text{
+/* ES una clase que nos pone wordpress */
+.sr-text, .screen-reader-text{
 	display: none;
 }
 
@@ -589,4 +590,55 @@ div.contenido-entrada p{
 	margin-bottom: 0;
 	margin-top: 0;
 	line-height: 24px;
+}
+
+/* SIDEBAR */
+form.searchform{
+	position: relative;
+}
+
+form.searchform #searchsubmit{
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 42px;
+	height: 42px;
+	background-color: #a61206;
+	text-indent: -9999px;
+	background-image: url(img/buscador.png);
+	background-repeat: no-repeat;
+	background-position: center center;
+	border: none;
+	cursor: pointer;
+}
+
+form.searchform input{
+	padding: 10px;
+}
+
+aside .widget{
+	margin-bottom: 20px;
+}
+
+aside .widget h3{
+	font-weight: 700;
+	font-size: 24px;
+	text-transform: uppercase;
+}
+
+aside .widget ul{
+	list-style: none;
+}
+
+aside .widget ul li{
+	margin-bottom: 13px;
+}
+
+aside .widget ul li a{
+	color: #000000;
+	text-decoration: none;
+}
+
+aside .widget ul li a:hover{
+	color: #f19f30;
 }
