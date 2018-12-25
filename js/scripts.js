@@ -14,4 +14,13 @@ $(document).ready(function(){
 			$('nav.menu-sitio').hide()
 		}
 	})
+
+	//Fluidbox
+	$('.gallery a').each(function(){
+		$(this).attr({'data-fluidbox' : ''})
+	})
+
+	if ($('[data-fluidbox]').length > 0) {
+		$('[data-fluidbox]').fluidbox()
+	}
 })

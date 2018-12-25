@@ -739,3 +739,23 @@ ul.lista-comentarios li.comment ul.children li{
 	font-weight: bold;
 	color: #555;
 }
+
+/* GALERIA */
+div#gallery-1 .gallery-item{
+	width: 50%;
+	margin: 0;
+}
+
+@media only screen and (min-width: 768px) {
+	div#gallery-1 .gallery-item{
+		width: 25%;
+	}		
+}
+
+div#gallery-1 .gallery-item .gallery-icon{
+	padding: 5px;
+}
+
+div#gallery-1 img{
+	border: none;
+}
