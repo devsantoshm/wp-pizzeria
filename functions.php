@@ -1,5 +1,7 @@
 <?php
 
+require get_template_directory() . '/inc/database.php';
+
 function lapizzeria_setup()
 {
 	//habilitar imagen destacada en wp backend 
