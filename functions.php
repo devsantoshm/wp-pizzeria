@@ -12,6 +12,7 @@ function lapizzeria_setup()
 	add_theme_support( 'post-thumbnails' );
 	add_image_size( 'nosotros', 367, 251, true );
 	add_image_size( 'especialidades', 468, 315, true );
+	add_image_size( 'especialidades_portrait', 435, 510, true );
 
 	//Cambiar tamaño de imagenes por default thumbnail=small 
 	update_option('thumbnail_size_w', 253);

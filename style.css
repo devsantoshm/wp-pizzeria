@@ -71,8 +71,20 @@ div.comentarios form input[type='submit']{
 	background-color: #a61206;
 }
 
+.rojo{
+	color: #a61206;
+}
+
 .button:hover{
 	background-color: #f19f30;
+}
+
+.button.naranja{
+	background-color: #f19f30;
+}
+
+.button.naranja:hover{
+	background-color: #a61206;
 }
 
 .clear, .clear::after{
@@ -526,7 +538,7 @@ div.texto-especialidad p{
 	}
 
 	.columnas1-3{
-		width: 33.3%;
+		width: 31.3%;
 	}
 
 	.columnas2-3{
@@ -798,4 +810,43 @@ form.reserva-contacto input[type="submit"]{
 	border: none;
 	margin: 0 auto;
 	display: block;
+}
+
+/* FRONT PAGE */
+.home div.hero{
+	height: 650px;
+}
+
+.home div.hero h1{
+	margin-top: 0;
+}
+
+.home .texto-hero p{
+	line-height: 40px;
+	font-size: 18px;
+}
+
+@media only screen and (min-width: 768px) {
+	.home .texto-hero{
+		max-width: 720px;
+	}
+}
+
+div.contenido-especialidad{
+	position: relative;
+	overflow: hidden; /* no se dibujan barras */
+	display: table;	  /* para centrar el texto */
+}
+
+div.informacion-platillo{
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	background-color: rgba(241, 159, 48, .75);
+	display: table-cell;
+	text-align: center;
+	vertical-align: middle;
+	color: #ffffff;
 }
