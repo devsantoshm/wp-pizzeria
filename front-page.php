@@ -18,7 +18,7 @@
 		
 		<div class="principal contenedor">
 			<main class="contenedor-grid">
-				<h2 class="rojo">Nuestras Especialidades</h2>
+				<h2 class="rojo texto-centrado">Nuestras Especialidades</h2>
 				<?php  
 				$args = array(
 					'posts_per_page' => 3,
@@ -38,7 +38,7 @@
 						<div class="informacion-platillo">
 							<?php the_title('<h3>', '</h3>'); ?>
 							<?php the_content(); ?>
-							<p class="precio"><?php the_field('precio'); ?></p>
+							<p class="precio">$<?php the_field('precio'); ?></p>
 							<a href="<?php the_permalink(); ?>" class="button">Leer más</a>
 						</div>
 					</div>
