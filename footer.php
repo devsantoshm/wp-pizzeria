@@ -9,8 +9,8 @@
 				wp_nav_menu( $args );
 			?>
 			<div class="ubicacion">
-				<p>3434 bay acend mubfyeeff, ca 343</p>
-				<p>teledon: +3-34-3434-3434</p>
+				<p><?php echo esc_html(get_option( 'lapizzeria_direccion' )); ?></p>
+				<p>teledon: <?php echo esc_html(get_option( 'lapizzeria_telefono' )); ?></p>
 			</div>
 
 			<p class="copyright">Todos los derechos reservados <?php echo date('Y') ?></p>
