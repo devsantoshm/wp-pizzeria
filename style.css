@@ -922,3 +922,54 @@ section.ingredientes div.imagen{
 section.ingredientes div.imagen img{
 	width: 80%;
 }
+
+/* UBICACIÓN Y RESERVACIÓN */
+section.ubicacion-reservacion{
+	background-image: url(img/bg-ingredientes.jpg);
+	margin-top: 50px;
+}
+
+.home form.reserva-contacto{
+	margin: 0;
+	padding: 50px;
+}
+
+.home form.reserva-contacto h2{
+	color: #ffffff;
+	font-size: 34px;
+	text-align: center;
+}
+
+.home form.reserva-contacto input,
+.home form.reserva-contacto textarea{
+	background-color: transparent;
+	border: 4px solid #ffffff;
+}
+
+.home form.reserva-contacto ::-webkit-input-placeholder{
+	color: #ffffff!important;
+}
+
+.home form.reserva-contacto :moz-input-placeholder{
+	color: #ffffff!important;
+}
+
+.home form.reserva-contacto ::moz-input-placeholder{
+	color: #ffffff!important;
+}
+
+.home form.reserva-contacto ::-ms-input-placeholder{
+	color: #ffffff!important;
+}
+
+input[type="datetime-local"]{
+	color: #ffffff!important;
+}
+
+.home form.reserva-contacto input[type="submit"]{
+	border: none;
+	width: auto;
+	background-color: #a61206;
+	display: inline;
+}
+

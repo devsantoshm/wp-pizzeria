@@ -66,4 +66,25 @@
 			</div>
 		</section>
 
+		<section class="contenedor">
+			<h2 class="texto-rojo texto-centrado">Galería de Imágenes</h2>
+			<?php $url = get_page_by_title( 'galeria' ); ?>
+			<?php echo get_post_gallery($url->ID); ?>
+		</section>
+
+		<section class="ubicacion-reservacion">
+			
+			<div class="contenedor-grid">
+				<?php while(have_posts()): the_post(); ?>
+				<div class="columnas2-4">
+					mapa
+				</div>
+				<div class="columnas2-4 imagen">
+					<?php get_template_part('templates/formulario', 'reservacion') ?>
+				</div>
+				<?php endwhile; ?>
+			</div>
+			
+		</section>
+
 <?php get_footer(); ?>
