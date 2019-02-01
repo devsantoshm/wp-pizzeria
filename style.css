@@ -973,3 +973,8 @@ input[type="datetime-local"]{
 	display: inline;
 }
 
+#mapa iframe{
+	height: 100%;
+	width: 100%;
+}
+
