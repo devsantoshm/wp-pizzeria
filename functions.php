@@ -46,6 +46,15 @@ function lapizzeria_styles()
 	wp_enqueue_script('jquery');
 	wp_enqueue_script('fluidbox');
 	wp_enqueue_script('scripts');
+
+	/*//PASAR VARIABLES DE PHP A JAVASCRIPT
+	wp_localize_script( 
+		'scripts', 
+		'opciones',
+		array(
+			'latitud' => get_option( 'lapizzeria_direccion' )
+		) 
+	);*/
 }
 
 add_action('wp_enqueue_scripts', 'lapizzeria_styles');
@@ -116,3 +125,274 @@ function lapizzeria_widgets(){
 
 add_action( 'widgets_init', 'lapizzeria_widgets' );
 
+// advanced custom fields
+define('ACF_LITE', true);
+
+include_once('advanced-custom-fields/acf.php');
+
+if( function_exists('acf_add_local_field_group') ):
+
+acf_add_local_field_group(array(
+	'key' => 'group_5c01dd3d5bfe9',
+	'title' => 'Especialidades',
+	'fields' => array(
+		array(
+			'key' => 'field_5c01dd7326e05',
+			'label' => 'Precio',
+			'name' => 'precio',
+			'type' => 'text',
+			'instructions' => 'Agregar precio del platillo',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'default_value' => '',
+			'placeholder' => '',
+			'prepend' => '',
+			'append' => '',
+			'maxlength' => '',
+		),
+	),
+	'location' => array(
+		array(
+			array(
+				'param' => 'post_type',
+				'operator' => '==',
+				'value' => 'especialidades',
+			),
+		),
+	),
+	'menu_order' => 0,
+	'position' => 'normal',
+	'style' => 'default',
+	'label_placement' => 'top',
+	'instruction_placement' => 'label',
+	'hide_on_screen' => '',
+	'active' => 1,
+	'description' => '',
+));
+
+acf_add_local_field_group(array(
+	'key' => 'group_5c4b9e922d380',
+	'title' => 'inicio',
+	'fields' => array(
+		array(
+			'key' => 'field_5c4b9ef1cac42',
+			'label' => 'Contenido',
+			'name' => 'contenido',
+			'type' => 'wysiwyg',
+			'instructions' => 'Agregue la descripción',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'default_value' => '',
+			'tabs' => 'all',
+			'toolbar' => 'full',
+			'media_upload' => 1,
+			'delay' => 0,
+		),
+		array(
+			'key' => 'field_5c4b9f2ccac43',
+			'label' => 'imagen',
+			'name' => 'imagen',
+			'type' => 'image',
+			'instructions' => 'Agregue la imagen',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'return_format' => 'url',
+			'preview_size' => 'thumbnail',
+			'library' => 'all',
+			'min_width' => '',
+			'min_height' => '',
+			'min_size' => '',
+			'max_width' => '',
+			'max_height' => '',
+			'max_size' => '',
+			'mime_types' => '',
+		),
+	),
+	'location' => array(
+		array(
+			array(
+				'param' => 'page',
+				'operator' => '==',
+				'value' => '94',
+			),
+		),
+	),
+	'menu_order' => 0,
+	'position' => 'normal',
+	'style' => 'default',
+	'label_placement' => 'top',
+	'instruction_placement' => 'label',
+	'hide_on_screen' => '',
+	'active' => 1,
+	'description' => '',
+));
+
+acf_add_local_field_group(array(
+	'key' => 'group_5bfc3180a7614',
+	'title' => 'Sobre Nosotros',
+	'fields' => array(
+		array(
+			'key' => 'field_5bfc31cdb9cbd',
+			'label' => 'imagen 1',
+			'name' => 'imagen_1',
+			'type' => 'image',
+			'instructions' => 'subir una imagen',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'return_format' => 'id',
+			'preview_size' => 'thumbnail',
+			'library' => 'all',
+			'min_width' => '',
+			'min_height' => '',
+			'min_size' => '',
+			'max_width' => '',
+			'max_height' => '',
+			'max_size' => '',
+			'mime_types' => '',
+		),
+		array(
+			'key' => 'field_5bfc32beb9cc0',
+			'label' => 'descripcion 1',
+			'name' => 'descripcion_1',
+			'type' => 'wysiwyg',
+			'instructions' => 'Agregar descripcion',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'default_value' => '',
+			'tabs' => 'all',
+			'toolbar' => 'full',
+			'media_upload' => 1,
+			'delay' => 0,
+		),
+		array(
+			'key' => 'field_5bfc327eb9cbe',
+			'label' => 'imagen 2',
+			'name' => 'imagen_2',
+			'type' => 'image',
+			'instructions' => 'subir una imagen',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'return_format' => 'id',
+			'preview_size' => 'thumbnail',
+			'library' => 'all',
+			'min_width' => '',
+			'min_height' => '',
+			'min_size' => '',
+			'max_width' => '',
+			'max_height' => '',
+			'max_size' => '',
+			'mime_types' => '',
+		),
+		array(
+			'key' => 'field_5bfc3308b9cc1',
+			'label' => 'descripcion 2',
+			'name' => 'descripcion_2',
+			'type' => 'wysiwyg',
+			'instructions' => 'Agregar descripcion',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'default_value' => '',
+			'tabs' => 'all',
+			'toolbar' => 'full',
+			'media_upload' => 1,
+			'delay' => 0,
+		),
+		array(
+			'key' => 'field_5bfc328eb9cbf',
+			'label' => 'imagen 3',
+			'name' => 'imagen_3',
+			'type' => 'image',
+			'instructions' => 'subir una imagen',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'return_format' => 'id',
+			'preview_size' => 'thumbnail',
+			'library' => 'all',
+			'min_width' => '',
+			'min_height' => '',
+			'min_size' => '',
+			'max_width' => '',
+			'max_height' => '',
+			'max_size' => '',
+			'mime_types' => '',
+		),
+		array(
+			'key' => 'field_5bfc3314b9cc2',
+			'label' => 'descripcion 3',
+			'name' => 'descripcion_3',
+			'type' => 'wysiwyg',
+			'instructions' => 'Agregar descripcion',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'default_value' => '',
+			'tabs' => 'all',
+			'toolbar' => 'full',
+			'media_upload' => 1,
+			'delay' => 0,
+		),
+	),
+	'location' => array(
+		array(
+			array(
+				'param' => 'page',
+				'operator' => '==',
+				'value' => '7',
+			),
+		),
+	),
+	'menu_order' => 0,
+	'position' => 'normal',
+	'style' => 'default',
+	'label_placement' => 'top',
+	'instruction_placement' => 'label',
+	'hide_on_screen' => '',
+	'active' => 1,
+	'description' => '',
+));
+
+endif;

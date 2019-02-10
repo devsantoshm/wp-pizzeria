@@ -15,27 +15,61 @@ function lapizzeria_registrar_opciones(){
   // Registrar opciones, una por campo
   register_setting( 'lapizzeria_opciones_grupo', 'lapizzeria_direccion' );
   register_setting( 'lapizzeria_opciones_grupo', 'lapizzeria_telefono' );
+
+  register_setting( 'lapizzeria_opciones_gmaps', 'lapizzeria_gmap_iframe' );
 }
 
 function lapizzeria_opciones(){
 ?>
   <div class="wrap">
     <h1>Ajustes la Pizzeria</h1>
+
+    <?php  
+      if (isset($_GET['tab'])) {
+        $active_tab = $_GET['tab'];
+      }else{
+        $active_tab = 'tema';
+      }
+    ?>
+
+    <h2 class="nav-tab-wrapper">
+      <a href="?page=lapizzeria_ajustes&tab=tema" class="nav-tab <?php echo $active_tab == 'tema' ? 'nav-tab-active' : '' ?>">Ajustes</a>
+      <a href="?page=lapizzeria_ajustes&tab=gmaps" class="nav-tab <?php echo $active_tab == 'gmaps' ? 'nav-tab-active' : '' ?>">Google Maps</a>
+    </h2>
+
     <form action="options.php" method="post">
 
-      <?php settings_fields( 'lapizzeria_opciones_grupo' ); ?>
-      <?php do_settings_sections( 'lapizzeria_opciones_grupo' ); ?>
-      
-      <table class="form-table">
-        <tr valign="top">
-          <th scope="row">Dirección</th>
-          <td><input type="text" name="lapizzeria_direccion" value="<?php echo esc_attr(get_option( 'lapizzeria_direccion' )); ?>"></td>
-        </tr>
-        <tr valign="top">
-          <th scope="row">Teléfono</th>
-          <td><input type="text" name="lapizzeria_telefono" value="<?php echo esc_attr(get_option( 'lapizzeria_telefono' )); ?>"></td>
-        </tr>
-      </table>
+      <?php if($active_tab == 'tema'){ ?>
+
+        <?php settings_fields( 'lapizzeria_opciones_grupo' ); ?>
+        <?php do_settings_sections( 'lapizzeria_opciones_grupo' ); ?>
+        
+        <table class="form-table">
+          <tr valign="top">
+            <th scope="row">Dirección</th>
+            <td><input type="text" name="lapizzeria_direccion" value="<?php echo esc_attr(get_option( 'lapizzeria_direccion' )); ?>"></td>
+          </tr>
+          <tr valign="top">
+            <th scope="row">Teléfono</th>
+            <td><input type="text" name="lapizzeria_telefono" value="<?php echo esc_attr(get_option( 'lapizzeria_telefono' )); ?>"></td>
+          </tr>
+        </table>
+  
+      <?php }else{ ?>
+
+        <?php settings_fields( 'lapizzeria_opciones_gmaps' ); ?>
+        <?php do_settings_sections( 'lapizzeria_opciones_gmaps' ); ?>
+
+        <h2>Google Maps</h2>
+        <table class="form-table">
+          <tr valign="top">
+            <th scope="row">Iframe google maps</th>
+            <td><textarea rows="5" cols="50" name="lapizzeria_gmap_iframe"><?php echo esc_attr(get_option( 'lapizzeria_gmap_iframe' )); ?></textarea></td>
+          </tr>
+        </table>
+
+      <?php } ?>
+
       <?php submit_button(); ?>
     </form>
   </div>

@@ -78,7 +78,7 @@
 				<?php while(have_posts()): the_post(); ?>
 				<div class="columnas2-4">
 					<div id="mapa">
-						<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3838.2917857756042!2d-70.02663369020645!3d-15.84125437502293!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x915d69eb4013ddbd%3A0xde99b3eca4371e4b!2sPlaza+de+Armas!5e0!3m2!1ses!2spe!4v1548637965767" frameborder="0" style="border:0" allowfullscreen></iframe>	
+						<?php echo get_option( 'lapizzeria_gmap_iframe' ); ?>
 					</div>
 				</div>
 				<div class="columnas2-4 imagen">
