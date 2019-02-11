@@ -10,6 +10,7 @@ function lapizzeria_setup()
 {
 	//habilitar imagen destacada en wp backend 
 	add_theme_support( 'post-thumbnails' );
+	
 	add_image_size( 'nosotros', 367, 251, true );
 	add_image_size( 'especialidades', 468, 315, true );
 	add_image_size( 'especialidades_portrait', 435, 510, true );
@@ -20,6 +21,18 @@ function lapizzeria_setup()
 }
 
 add_action( 'after_setup_theme', 'lapizzeria_setup' );
+
+function lapizzeria_custom_logo()
+{
+	$logo = array(
+		'height' => 220,
+		'width' => 280
+	);
+
+	add_theme_support( 'custom-logo', $logo );
+}
+
+add_action( 'after_setup_theme', 'lapizzeria_custom_logo' );
 
 function lapizzeria_styles()
 {
