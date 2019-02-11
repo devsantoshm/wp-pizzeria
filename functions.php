@@ -10,6 +10,8 @@ function lapizzeria_setup()
 {
 	//habilitar imagen destacada en wp backend 
 	add_theme_support( 'post-thumbnails' );
+	//agregartitulos dinámicos para el seo
+	add_theme_support( 'title-tag' );
 	
 	add_image_size( 'nosotros', 367, 251, true );
 	add_image_size( 'especialidades', 468, 315, true );
