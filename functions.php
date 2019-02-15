@@ -75,6 +75,9 @@ function lapizzeria_styles()
 add_action('wp_enqueue_scripts', 'lapizzeria_styles');
 
 function lapizzeria_admin_scripts(){
+	wp_enqueue_style( 'sweetalert', get_template_directory_uri() . '/css/sweetalert2.min.css' );
+	wp_enqueue_script('sweetalertjs', get_template_directory_uri() . '/js/sweetalert2.min.js', array('jquery'), '1.0', true);
+	
 	//dependencia es jquery y que cargue en el footer con true
 	wp_enqueue_script('adminjs', get_template_directory_uri() . '/js/admin-ajax.js', array('jquery'), '1.0', true);
 
