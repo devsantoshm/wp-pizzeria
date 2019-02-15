@@ -3,11 +3,27 @@
 function lapizzeria_eliminar(){
 	if (isset($_POST['tipo'])) {
 		if ($_POST['tipo'] == 'eliminar') {
-			echo "Si se envio";
+			global $wpdb;
+			$tabla = $wpdb->prefix . 'reservaciones';
+			$id_registro = $_POST['id'];
+			//%d indica el tipo de datos del id que es entero
+			$resultado = $wpdb->delete($tabla, array('id' => $id_registro), array('%d'));
+
+			if ($resultado == 1) {
+				$respuesta = array(
+					'respuesta' => 1,
+					'id' => $id_registro
+				);
+
+			} else {
+				$respuesta = array(
+					'respuesta' => 'error'
+				);
+			}
 		}
 	}
 
-	die();
+	die(json_encode($respuesta));
 }
 
 add_action( 'wp_ajax_lapizzeria_eliminar', 'lapizzeria_eliminar' );

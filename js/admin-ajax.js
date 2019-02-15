@@ -19,7 +19,12 @@ $(document).ready(function(){
 			},
 			url: url_eliminar.ajaxurl,
 			success: function(data){
-				console.log(data)
+				//console.log(data)
+				// convertir un json de php a un objeto javascript
+				var resultado = JSON.parse(data)
+				if (resultado.respuesta == 1) {
+					$("[data-reservaciones='"+ resultado.id + "']").parent().parent().remove()
+				} 
 			}
 
 		})
