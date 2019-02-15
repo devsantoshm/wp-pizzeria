@@ -1,5 +1,17 @@
 <?php
 
+function lapizzeria_eliminar(){
+	if (isset($_POST['tipo'])) {
+		if ($_POST['tipo'] == 'eliminar') {
+			echo "Si se envio";
+		}
+	}
+
+	die();
+}
+
+add_action( 'wp_ajax_lapizzeria_eliminar', 'lapizzeria_eliminar' );
+
 function lapizzeria_guardar()
 {
 	global $wpdb;
